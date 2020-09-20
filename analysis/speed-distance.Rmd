@@ -1,0 +1,29 @@
+---
+title: "speed-distance"
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+### Basic Calculations:
+```{r}
+head(cars)
+
+# do some stats
+meanSpeed = mean(cars$speed)
+meanDist = mean(cars$dist)
+```
+
+### Basic Plots:
+
+```{r}
+reg = lm(dist~speed, data = cars)
+plot(cars$dist~cars$speed, pch = 16, main="Stopping Dist vs Speed")
+# Add the regression line
+abline(reg)
+```
+
+Here is my amazing conclusion. As your speed increases, your stopping didstance increases!
+
+Don't speed.
